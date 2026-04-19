@@ -1,0 +1,89 @@
+{
+  "jokes": [
+    {
+      "id": 1,
+      "joke": "Why don't scientists trust atoms? Because they make up everything."
+    },
+    {
+      "id": 2,
+      "joke": "I'm reading a book about anti-gravity. It's impossible to put down."
+    },
+    {
+      "id": 3,
+      "joke": "Did you hear about the mathematician who's afraid of negative numbers? He'll stop at nothing to avoid them."
+    },
+    {
+      "id": 4,
+      "joke": "Why did the scarecrow win an award? Because he was outstanding in his field."
+    },
+    {
+      "id": 5,
+      "joke": "I used to hate facial hair, but then it grew on me."
+    },
+    {
+      "id": 6,
+      "joke": "What do you call a fish without eyes? A fsh."
+    },
+    {
+      "id": 7,
+      "joke": "Why can't you give Elsa a balloon? Because she'll let it go."
+    },
+    {
+      "id": 8,
+      "joke": "I asked the librarian if they had books about paranoia. She whispered, \"They're right behind you.\""
+    },
+    {
+      "id": 9,
+      "joke": "What do you call cheese that isn't yours? Nacho cheese."
+    },
+    {
+      "id": 10,
+      "joke": "I only know 25 letters of the alphabet. I don't know y."
+    },
+    {
+      "id": 11,
+      "joke": "Why did the bicycle fall over? Because it was two-tired."
+    },
+    {
+      "id": 12,
+      "joke": "What do you call a sleeping dinosaur? A dino-snore."
+    },
+    {
+      "id": 13,
+      "joke": "I told my doctor I broke my arm in two places. He told me to stop going to those places."
+    },
+    {
+      "id": 14,
+      "joke": "Did you hear about the claustrophobic astronaut? He just needed a little space."
+    },
+    {
+      "id": 15,
+      "joke": "Why don't eggs tell jokes? They'd crack each other up."
+    },
+    {
+      "id": 16,
+      "joke": "What do you call a bear with no teeth? A gummy bear."
+    },
+    {
+      "id": 17,
+      "joke": "I'm on a seafood diet. Every time I see food, I eat it."
+    },
+    {
+      "id": 18,
+      "joke": "Why did the golfer bring an extra pair of pants? In case he got a hole in one."
+    },
+    {
+      "id": 19,
+      "joke": "What did the ocean say to the beach? Nothing, it just waved."
+    },
+    {
+      "id": 20,
+      "joke": "I would avoid the sushi if I were you. It's a little fishy."
+    },
+    {
+      "id": 21,
+      "joke": "Why did the calendar go to therapy? Too many dates."
+    }
+  ],
+  "nextId": 22
+}
