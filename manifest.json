@@ -1,0 +1,17 @@
+{
+  "name": "Dad Jokes",
+  "short_name": "Dad Jokes",
+  "description": "A collection of dad jokes at a moment's notice",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fef9f0",
+  "theme_color": "#f59e0b",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

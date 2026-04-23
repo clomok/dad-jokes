@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" fill="#f59e0b"/>
+  <rect x="68" y="72" width="376" height="268" rx="44" fill="white"/>
+  <polygon points="128,340 96,436 218,340" fill="white"/>
+  <text x="256" y="228" text-anchor="middle" dominant-baseline="middle"
+        font-family="Arial Black, Impact, system-ui, sans-serif" font-weight="900"
+        font-size="136" fill="#f59e0b">HA!</text>
+</svg>
