@@ -16,7 +16,7 @@
       const preferred = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
       document.documentElement.setAttribute('data-theme', saved || preferred);
     })();
-  <\/script>
+  </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -48,7 +48,6 @@
       transition: background 0.2s, color 0.2s;
     }
 
-    /* ── top bar ── */
     .topbar {
       display: flex;
       justify-content: space-between;
@@ -71,7 +70,6 @@
 
     #theme-btn:hover { border-color: var(--sub); color: var(--text); }
 
-    /* ── main content ── */
     main {
       flex: 1;
       display: flex;
@@ -160,7 +158,6 @@
       min-height: 1rem;
     }
 
-    /* ── footer ── */
     footer {
       text-align: center;
       padding: 0.75rem 1.25rem 1rem;
@@ -172,11 +169,7 @@
       flex-wrap: wrap;
     }
 
-    footer a {
-      color: var(--muted);
-      text-decoration: none;
-    }
-
+    footer a { color: var(--muted); text-decoration: none; }
     footer a:hover { color: var(--sub); text-decoration: underline; }
 
     @media (max-width: 400px) {
@@ -227,7 +220,7 @@
       "I used to hate facial hair, but then it grew on me.",
       "What do you call a fish without eyes? A fsh.",
       "Why can't you give Elsa a balloon? Because she'll let it go.",
-      'I asked the librarian if they had books about paranoia. She whispered, "They\'re right behind you."',
+      "I asked the librarian if they had books about paranoia. She whispered, \"They're right behind you.\"",
       "What do you call cheese that isn't yours? Nacho cheese.",
       "I only know 25 letters of the alphabet. I don't know y.",
       "Why did the bicycle fall over? Because it was two-tired.",
@@ -242,8 +235,7 @@
       "I would avoid the sushi if I were you. It's a little fishy."
     ];
 
-    // ── theme ──
-    const themeBtn = document.getElementById('theme-btn');
+    const themeBtn  = document.getElementById('theme-btn');
     const metaTheme = document.getElementById('theme-color-meta');
 
     function applyTheme(theme) {
@@ -254,17 +246,14 @@
     }
 
     themeBtn.addEventListener('click', () => {
-      const current = document.documentElement.getAttribute('data-theme');
-      applyTheme(current === 'dark' ? 'light' : 'dark');
+      applyTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
     });
 
     applyTheme(document.documentElement.getAttribute('data-theme'));
 
-    // ── joke count ──
     document.getElementById('joke-count').textContent =
       LOCAL_JOKES.length + ' jokes in the local collection';
 
-    // ── jokes ──
     let lastIndex = -1;
 
     function pickLocal() {
@@ -292,7 +281,6 @@
     async function loadJoke() {
       card.classList.add('fade');
       await new Promise(r => setTimeout(r, 200));
-
       let result;
       try {
         result = toggle.checked ? await pickInternet() : pickLocal();
@@ -300,7 +288,6 @@
         result = pickLocal();
         result.source += ' (internet unavailable)';
       }
-
       jokeEl.textContent = result.text;
       sourceEl.textContent = 'source: ' + result.source;
       card.classList.remove('fade');
@@ -312,6 +299,6 @@
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('sw.js');
     }
-  <\/script>
+  </script>
 </body>
 </html>
