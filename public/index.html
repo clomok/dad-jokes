@@ -2,7 +2,7 @@
 <html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Dad Jokes</title>
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#f59e0b" id="theme-color-meta">
@@ -146,7 +146,7 @@
 
     /* footer */
     footer {
-      padding: 0.6rem 1.25rem 0.75rem;
+      padding: 0.6rem 1.25rem max(0.75rem, env(safe-area-inset-bottom));
       font-size: 0.72rem;
       color: var(--muted);
       display: flex;
