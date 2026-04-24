@@ -38,50 +38,36 @@
       --shadow: rgba(0, 0, 0, 0.35);
     }
 
+    html, body {
+      height: 100%;
+    }
+
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      min-height: 100vh;
+      height: 100vh;
+      height: 100dvh;
       display: flex;
       flex-direction: column;
+      overflow: hidden;
       background: var(--bg);
       color: var(--text);
       transition: background 0.2s, color 0.2s;
     }
 
-    .topbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.6rem 1.25rem;
-      font-size: 0.75rem;
-      color: var(--muted);
-    }
-
-    #theme-btn {
-      background: none;
-      border: 1px solid var(--muted);
-      border-radius: 1rem;
-      padding: 0.25rem 0.7rem;
-      font-size: 0.72rem;
-      color: var(--sub);
-      cursor: pointer;
-      transition: border-color 0.15s, color 0.15s;
-    }
-
-    #theme-btn:hover { border-color: var(--sub); color: var(--text); }
-
     main {
       flex: 1;
+      min-height: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 1rem 1.5rem 2rem;
+      padding: 1rem 1.5rem;
+      overflow: auto;
     }
 
     header {
       text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
     }
 
     h1 {
@@ -95,15 +81,15 @@
     .card {
       background: var(--card);
       border-radius: 1.5rem;
-      padding: clamp(1.5rem, 5vw, 3rem);
+      padding: clamp(1.25rem, 4vw, 2.5rem);
       max-width: 640px;
       width: 100%;
       box-shadow: 0 4px 32px var(--shadow);
-      min-height: 160px;
+      min-height: 140px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 1.75rem;
+      margin-bottom: 1.5rem;
       transition: opacity 0.2s ease, background 0.2s;
     }
 
@@ -120,7 +106,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1rem;
+      gap: 0.875rem;
       width: 100%;
       max-width: 640px;
     }
@@ -159,18 +145,60 @@
     }
 
     footer {
-      text-align: center;
-      padding: 0.75rem 1.25rem 1rem;
+      padding: 0.6rem 1.25rem 0.75rem;
       font-size: 0.72rem;
       color: var(--muted);
       display: flex;
-      justify-content: center;
-      gap: 0.6rem;
-      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.35rem;
     }
 
-    footer a { color: var(--muted); text-decoration: none; }
-    footer a:hover { color: var(--sub); text-decoration: underline; }
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover { color: var(--sub); text-decoration: underline; }
+
+    #theme-btn {
+      background: none;
+      border: 1px solid var(--muted);
+      border-radius: 1rem;
+      padding: 0.2rem 0.6rem;
+      font-size: 0.68rem;
+      color: var(--sub);
+      cursor: pointer;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    #theme-btn:hover { border-color: var(--sub); color: var(--text); }
+
+    .footer-made {
+      color: var(--muted);
+    }
+
+    .footer-made a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .footer-made a:hover { color: var(--sub); text-decoration: underline; }
+
+    .heart {
+      color: #f59e0b;
+      font-size: 2em;
+      line-height: 0.6;
+      vertical-align: middle;
+    }
 
     @media (max-width: 400px) {
       .card { border-radius: 1rem; }
@@ -178,11 +206,6 @@
   </style>
 </head>
 <body>
-
-  <div class="topbar">
-    <span id="joke-count"></span>
-    <button id="theme-btn"></button>
-  </div>
 
   <main>
     <header>
@@ -204,11 +227,18 @@
   </main>
 
   <footer>
-    <span>A dad joke a day keeps the doctor away</span>
-    <span>&middot;</span>
-    <a href="https://icanhazdadjoke.com" target="_blank" rel="noopener">icanhazdadjoke.com</a>
-    <span>&middot;</span>
-    <a href="https://github.com/clomok/dad-jokes" target="_blank" rel="noopener">GitHub</a>
+    <div class="footer-links">
+      <span>A dad joke a day keeps the doctor away</span>
+      <span>&middot;</span>
+      <a href="https://icanhazdadjoke.com" target="_blank" rel="noopener">icanhazdadjoke.com</a>
+      <span>&middot;</span>
+      <a href="https://github.com/clomok/dad-jokes" target="_blank" rel="noopener">GitHub</a>
+      <span>&middot;</span>
+      <button id="theme-btn"></button>
+    </div>
+    <div class="footer-made">
+      Made with <span class="heart">&hearts;</span> by <a href="https://menu.thekylestyle.com" target="_blank" rel="noopener">Kyle</a>
+    </div>
   </footer>
 
   <script>
@@ -250,9 +280,6 @@
     });
 
     applyTheme(document.documentElement.getAttribute('data-theme'));
-
-    document.getElementById('joke-count').textContent =
-      LOCAL_JOKES.length + ' jokes in the local collection';
 
     let lastIndex = -1;
 
